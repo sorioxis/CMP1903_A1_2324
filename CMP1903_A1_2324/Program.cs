@@ -40,7 +40,11 @@ namespace CMP1903_A1_2324
                     Console.WriteLine("That isn't a number. Please input a number only.");
                 }     
             }
-                switch (choice)
+            ///<summary>
+            ///Runs the actual game using methods from Game & Testing
+            /// </summary>
+            /// <returns> 3 die rolls, sum of all 3 die, or 500 die & their individual sums (if Testing chosen) </returns>
+            switch (choice)
                 {
                     case 1:
                         Game game = new Game();
@@ -50,7 +54,7 @@ namespace CMP1903_A1_2324
                         game.Reset();
                         break;                      
                     case 2:
-                        Testing testroll = new Testing();
+                        Testing testroll = new Testing(); //Call a new test method
                         testroll.Run();
                         break;
                     case 3:

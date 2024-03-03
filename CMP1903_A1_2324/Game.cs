@@ -50,21 +50,24 @@ namespace CMP1903_A1_2324
             Console.WriteLine($"Die 3:  {_die3.CrntRoll}");
         }
 
+        /// <summary>
+        /// Method to reset the game, will be called in the main program
+        /// </summary>
         public void Reset()
         {
             int Restart;
             Console.WriteLine("Press 1 to restart, or 2 to exit");
-            Restart = Convert.ToInt16(Console.ReadLine());
+            Restart = Convert.ToInt16(Console.ReadLine()); //Converting to int16, console wont read it otherwise
             switch (Restart)
             {
-                case 1:
-                    Game game = new Game();
+                case 1: //If user inputs 1...
+                    Game game = new Game(); //Start a new game
                     game.Roll();
                     game.RollOutput();
                     game.RollSum();
-                    Reset();
+                    Reset(); //Call reset method again (loops) until...
                     break;
-                case 2:
+                case 2: //User inputs 2, where it will exit 
                     Environment.Exit(0);
                     break;
             }
