@@ -30,11 +30,10 @@ namespace CMP1903_A1_2324
                 int[] allrolls = { game._die1.CrntRoll, game._die2.CrntRoll, game._die3.CrntRoll }; //Store rolls in a list so we can iterate over them individually
                 foreach (int Val in allrolls) //For each value (roll) in the list above
                 {
-                    game.RollOutput(); //Show output of value
-                    game.RollSum(); // Show sum of values (from 3 die)
                     Debug.Assert(Val < 1 == false, "Detected roll less than 1."); //Detect if die is lower than 1 
                     Debug.Assert(Val > 6 == false, "Detected roll more than 6."); //Detect if die is lower than 6
                 }                              
+                Debug.Assert(game.RollSum() == (game._die1.CrntRoll + game._die2.CrntRoll+ game._die3.CrntRoll), "Rolls do not correctly match the actual sum of the rolls");
             }
             Console.WriteLine("Debugging / Testing complete, closing program in 10 seconds (or press any key to exit)"); //Program kept closing automatically (needs Console.Read();)
             System.Threading.Thread.Sleep(10000); //Waits 10 seconds then exits unless manually exit by user
